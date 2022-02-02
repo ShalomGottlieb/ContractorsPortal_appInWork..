@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -20,6 +21,8 @@ public class Message {
     private int id;
     @Enumerated(EnumType.ORDINAL)
     private MessageOptions typeId;
+    private String text;
+    private Date date;
     private int userId;
     @ManyToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     private List<Message> myMessages;

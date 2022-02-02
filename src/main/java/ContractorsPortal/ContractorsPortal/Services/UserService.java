@@ -2,6 +2,7 @@ package ContractorsPortal.ContractorsPortal.Services;
 
 import ContractorsPortal.ContractorsPortal.Beans.Message;
 import ContractorsPortal.ContractorsPortal.Beans.User;
+import ContractorsPortal.ContractorsPortal.Exceptions.AlreadyExistsException;
 import ContractorsPortal.ContractorsPortal.Repositories.MessageRepo;
 import ContractorsPortal.ContractorsPortal.Repositories.UserRepo;
 import lombok.RequiredArgsConstructor;
