@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TrainingRepo extends JpaRepository<Training, Integer> {
+    Training findById(int id);
 
 }

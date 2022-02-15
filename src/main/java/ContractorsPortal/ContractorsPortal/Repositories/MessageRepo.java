@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MessageRepo extends JpaRepository<Message, Integer> {
+    Message findById(int id);
 
 }

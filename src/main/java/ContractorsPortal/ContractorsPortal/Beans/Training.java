@@ -18,12 +18,13 @@ public class Training {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String title;
-    private String subtitle;
+    @Column(name = "titleId")
+    private int titleId;
     private String text;
-    private String Media;
-    private int userId;
-    @ManyToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
-    private List<Message> myMessages;
+    private String media;
+    private int TrUserId;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true) //orphanRemoval = true
+    @JoinColumn(name = "clusterId")
+    private List<Message> attachMessages;
 
 }

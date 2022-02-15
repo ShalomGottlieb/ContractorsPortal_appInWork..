@@ -13,17 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name="users")
-public class User {
+@Table(name="titles")
+public class Title {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    private String email;
-    private String password;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true) //orphanRemoval = true
-    @JoinColumn(name = "clusterId")
-//    @JoinColumn(name = "userId")
-    private List<Message> myMessages;
-
+    private String title;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "titleId")
+    private List<Training> trainings;
 }
